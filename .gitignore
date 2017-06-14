@@ -1,0 +1,6 @@
+*.swp
+*.beam
+*.dump
+*.class
+**/node_modules/
+results/
