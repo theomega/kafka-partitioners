@@ -33,7 +33,9 @@ The [Erlang](./erlang/test.erl) implementation uses the [crc32 function](http://
 To ensure that all the implementations do the same, there is a testing harness inside this repository. Execute the `./test.sh` script to run all the implementations and compare their results to guarantee that every implementation returns the same. How this is done is that the implementation is executed using a sample set of keys and a sample set of number of partitions.
 To execute the testing, you need to have all the programming languages and their tools installed.
 
-## Further work
+## Next Steps
   - [ ] Implement the testing in a docker container to prevent everyone having to install all the programming languages to test
   - [ ] Implement a better version of the Java CRC32
+  - [ ] Check all implementations if they also work with non-string byte-arrays
+  - [ ] Add Timing tests which test the performance of the implementations.
   - [ ] Check if other algorithms (i.e. murmur2) make more sense.
