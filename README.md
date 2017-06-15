@@ -11,7 +11,7 @@ This repository settles on a simple algorithm.
 
 1. Given a key `K` as a array of bytes and `numberOfPartitions`, a positive, non-zero number
 2. Calcuate the [CRC32](https://en.wikipedia.org/wiki/Cyclic_redundancy_check) checksum. This leads into a signed int32 number.
-3. Bitwise and the result with `0xfffffff` which also turns the result into a positive number
+3. Only use the lowest 28 bits of the int32. This turns the result into a positive number. You can achieve this by doing a bitwise `AND` of the result of the crc32 calcuation with `0xfffffff`.
 4. Calcuate the remainder of the division (modulo) of the number from 3. with the number of partitions
 
 This gives you a number from 0 to `numberOfPartitions`
@@ -37,5 +37,3 @@ To execute the testing, you need to have all the programming languages and their
   - [ ] Implement the testing in a docker container to prevent everyone having to install all the programming languages to test
   - [ ] Implement a better version of the Java CRC32
   - [ ] Check if other algorithms (i.e. murmur2) make more sense.
-
-
