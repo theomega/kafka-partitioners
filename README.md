@@ -21,7 +21,7 @@ This gives you a number from 0 to `numberOfPartitions`
 The [Python Implementation](./python/test.py) uses the [crc32 method](https://docs.python.org/3/library/binascii.html#binascii.crc32) from the `binascii` package which is contained in the default python distribution. Pay attention that the implemention of this library function is not consistent between python2 and python3. The specification of the algorithm above and the implementation in this package are done in a way that the result is stable and the same between python2 and python3.
 
 ### NodeJS
-The [NodeJS Implementation(./nodejs/test.js) uses the [CRC-32 npm module](https://www.npmjs.com/package/crc-32). This module needs to be installed for the function to work. The actual implementation is staight forward.
+The [NodeJS Implementation(./nodejs/test.js) uses the [CRC-32 npm module](https://www.npmjs.com/package/crc-32). This module needs to be installed for the function to work. The actual implementation is staight forward. The CRC-32 implementation defaults to UTF-8 encoding, so no need to convert the string to a byte array first.
 
 ### Java
 The [Java](./java/Test.java) implementation uses the (java.util.zip.CRC32)[https://docs.oracle.com/javase/7/docs/api/java/util/zip/CRC32.html]) class which is bundles with the default JRE. The implementation is straight forward. The main issue here are performance concerns, for every CRC32 calculation, a new `CRC32` object is created which can lead into GC problems. A way out of this is to find a simpler CRC32 implementation.
