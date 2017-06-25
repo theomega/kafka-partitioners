@@ -24,7 +24,7 @@ The [Python Implementation](./python/test.py) uses the [crc32 method](https://do
 The [NodeJS Implementation](./nodejs/test.js) uses the [CRC-32 npm module](https://www.npmjs.com/package/crc-32). This module needs to be installed for the function to work. The actual implementation is staight forward. The CRC-32 implementation defaults to UTF-8 encoding, so no need to convert the string to a byte array first.
 
 ### Java
-The [Java](./java/Test.java) implementation uses the (java.util.zip.CRC32)[https://docs.oracle.com/javase/7/docs/api/java/util/zip/CRC32.html]) class which is bundles with the default JRE. The implementation is straight forward. The main issue here are performance concerns, for every CRC32 calculation, a new `CRC32` object is created which can lead into GC problems. A way out of this is to find a simpler CRC32 implementation.
+The [Java](./java/Test.java) implementation uses the [java.util.zip.CRC32](https://docs.oracle.com/javase/7/docs/api/java/util/zip/CRC32.html) class which is bundles with the default JRE. The implementation is straight forward. The main issue here are performance concerns, for every CRC32 calculation, a new `CRC32` object is created which can lead into GC problems. A way out of this is to find a simpler CRC32 implementation.
 
 ### Erlang
 The [Erlang](./erlang/test.erl) implementation uses the [crc32 function](http://erlang.org/doc/man/erlang.html#crc32-1) which is available out of the box. The actual implementation is straight forward.
